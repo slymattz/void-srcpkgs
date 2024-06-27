@@ -1,0 +1,17 @@
+# Template file for 'catppuccin-vim'
+pkgname=catppuccin-vim
+_commitfull=43771ad2a9ee18b276fb2c388906b904be361dde
+version=20240528
+revision=1
+short_desc="Catppuccin color scheme for vim"
+maintainer="Mateusz Sylwestrzak <slymattz@gmail.com>"
+license="MIT"
+homepage="https://github.com/catppuccin/vim"
+distfiles="https://github.com/catppuccin/vim/archive/$_commitfull.tar.gz"
+checksum=79a4d3a6c47ca3bcc72512a3856d665d509621792d64ecb89e99fd0a7ff83f1c
+
+do_install() {
+	vmkdir /usr/share/vim/vim91/colors
+	vcopy colors/*.vim /usr/share/vim/vim91/colors
+	vlicense LICENSE
+}

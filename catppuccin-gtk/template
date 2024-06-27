@@ -1,0 +1,15 @@
+# Template file for 'catppuccin-gtk'
+pkgname=catppuccin-gtk
+version=1.0.3
+revision=1
+short_desc="Catppuccin theme for gtk"
+maintainer="Mateusz Sylwestrzak <slymattz@gmail.com>"
+license="GPL-3.0-or-later"
+homepage="https://github.com/catppuccin/gtk"
+distfiles="https://github.com/catppuccin/gtk/releases/download/v${version}/catppuccin-latte-peach-standard+default.zip"
+checksum=aabbd314daec1f7d967e7646b23436432631d18c031ae50aefdaf15e3495f098
+
+do_install() {
+	vmkdir /usr/share/themes
+	vcopy catppuccin-latte-peach-standard+default /usr/share/themes
+}

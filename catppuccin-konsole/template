@@ -1,0 +1,17 @@
+# Template file for 'catppuccin-konsole'
+pkgname=catppuccin-konsole
+_commitfull=7d86b8a1e56e58f6b5649cdaac543a573ac194ca
+version=20221109
+revision=1
+short_desc="Catppuccin color scheme for konsole"
+maintainer="Mateusz Sylwestrzak <slymattz@gmail.com>"
+license="MIT"
+homepage="https://github.com/catppuccin/konsole"
+distfiles="https://github.com/catppuccin/konsole/archive/$_commitfull.tar.gz"
+checksum=7a022f0d71696c3b0c493603d0336fd4164bf0149e13edb9d97ba2e4035e86b8
+
+do_install() {
+	vmkdir /usr/share/konsole
+	vcopy *.colorscheme /usr/share/konsole
+	vlicense LICENSE
+}

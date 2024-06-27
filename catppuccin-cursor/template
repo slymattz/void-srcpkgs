@@ -1,0 +1,19 @@
+# Template file for 'catppuccin-cursor'
+pkgname=catppuccin-cursor
+version=0.3.1
+revision=1
+short_desc="Catppuccin cursor theme"
+maintainer="Mateusz Sylwestrzak <slymattz@gmail.com>"
+license="GPL-2.0-only"
+homepage="https://github.com/catppuccin/cursors"
+distfiles="https://github.com/catppuccin/cursors/releases/download/v${version}/catppuccin-latte-peach-cursors.zip"
+checksum=819146b488b314cf5ee0265419fbcd1a7382872a1986c64c6a2ee30bcc9c20c7
+
+pre_install() {
+	rm LICENSE
+}
+
+do_install() {
+	vmkdir /usr/share/icons/Catppuccin-Latte-Peach-cursors
+	vcopy * /usr/share/icons/Catppuccin-Latte-Peach-cursors
+}

@@ -1,0 +1,26 @@
+# Template file for 'moe-plasma'
+pkgname=moe-plasma
+version=20240514
+revision=1
+short_desc="Moe theme for plasma6"
+maintainer="Mateusz Sylwestrzak <slymattz@gmail.com>"
+license="GPL-3.0-only"
+homepage="https://gitlab.com/jomada/moe-theme"
+distfiles="https://gitlab.com/jomada/moe-theme/-/archive/master/moe-theme-39215b6305af3ecec67d8c6dd2c2721f60c23594.tar.gz"
+checksum=9a51bf19902fdc19fcc1d23253b5f80a5855401f220762a5eaa53fb55e2c46f8
+
+do_install() {
+	vmkdir /usr/share/plasma/desktoptheme
+	vmkdir /usr/share/plasma/look-and-feel
+	vmkdir /usr/share/aurorae/themes
+	vmkdir /usr/share/color-schemes
+	vmkdir /usr/share/konsole
+	vmkdir /usr/share/plasma/layout-templates
+
+	vcopy Moe /usr/share/plasma/desktoptheme
+	vcopy look-and-feel/* /usr/share/plasma/look-and-feel
+	vcopy aurorae/* /usr/share/aurorae/themes
+	vcopy color-schemes/* /usr/share/color-schemes
+	vcopy konsole/* /usr/share/konsole
+	vcopy latte-layout/* /usr/share/plasma/layout-templates
+}

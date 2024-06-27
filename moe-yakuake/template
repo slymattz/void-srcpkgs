@@ -1,0 +1,19 @@
+# Template file for 'moe-yakuake'
+pkgname=moe-yakuake
+version=20230806
+revision=1
+short_desc="Moe theme for yakuake"
+maintainer="Mateusz Sylwestrzak <slymattz@gmail.com>"
+license="GPL-3.0-only"
+homepage="https://gitlab.com/jomada/moe-theme"
+distfiles="https://freeshell.de/~mateo/Moe.tar.gz"
+checksum=3470b3aa8326367c6630db4a53d0c702a7d26749f175260b4735af35531f7727
+
+pre_install() {
+	rm LICENSE
+}
+
+do_install() {
+	vmkdir /usr/share/yakuake/skins/Moe
+	vcopy * /usr/share/yakuake/skins/Moe
+}

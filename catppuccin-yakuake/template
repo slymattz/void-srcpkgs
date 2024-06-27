@@ -1,0 +1,20 @@
+# Template file for 'catppuccin-yakuake'
+pkgname=catppuccin-yakuake
+_commitfull=3b4fa644a83022b8e920f60f4eaf4aa59f420640
+version=20240708
+revision=1
+short_desc="Catppuccin theme for yakuake"
+maintainer="Mateusz Sylwestrzak <slymattz@gmail.com>"
+license="MIT"
+homepage="https://github.com/catppuccin/yakuake"
+distfiles="https://github.com/catppuccin/yakuake/archive/$_commitfull.tar.gz"
+checksum=59d436bc6fb6f27aa78f552fe4a32a857eda4579cf97701c618124e9fbdf57f6
+
+do_install() {
+	vmkdir /usr/share/yakuake/skins
+	vcopy latte /usr/share/yakuake/skins/CatppuccinLatte
+	vcopy frappe /usr/share/yakuake/skins/CatppuccinFrappe
+	vcopy macchiato /usr/share/yakuake/skins/CatppuccinMacchiato
+	vcopy mocha /usr/share/yakuake/skins/CatppuccinMocha
+	vlicense LICENSE
+}
